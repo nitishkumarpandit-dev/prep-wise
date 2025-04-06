@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-
+import { Analytics } from "@vercel/analytics/react";
 const MonaSans = Mona_Sans({
   variable: "--font-mona-sans",
   subsets: ["latin"],
@@ -29,6 +29,7 @@ export default async function RootLayout({
     <html lang="en" className="dark">
       <body className={`${MonaSans.className} antialiased pattern`}>
         {children}
+        <Analytics />
         <Toaster />
       </body>
     </html>
